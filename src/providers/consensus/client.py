@@ -95,7 +95,7 @@ class ConsensusClient(HTTPProvider):
             path_params=(state_id,),
             force_raise=self.__raise_last_missed_slot_error,
             force_use_fallback=force_use_fallback_callback,
-            timeout=1.5,
+            timeout=15,
             retry_strategy=Retry(
                 total=1, backoff_factor=0.5, status_forcelist=self.HTTP_REQUEST_RETRY_STATUS_FORCELIST
             ),
